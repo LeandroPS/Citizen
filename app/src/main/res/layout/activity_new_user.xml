@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="pooa20161.iff.edu.br.citizen.New_user"
+    android:background="#ffffff">
+
+    <ImageView
+        android:layout_width="300px"
+        android:layout_height="300px"
+        android:id="@+id/photo"
+        android:background="@drawable/rounded_outline"
+        android:src="@android:drawable/ic_menu_camera"
+        android:padding="50px"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50px" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp">
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/editText3"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:hint="Nome" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/editText4"
+            android:layout_below="@+id/editText3"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/editText3"
+            android:hint="E-mail" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/editText5"
+            android:layout_below="@+id/editText4"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/editText4"
+            android:hint="Senha" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/editText6"
+            android:layout_below="@+id/editText5"
+            android:layout_alignParentStart="true"
+            android:layout_alignEnd="@+id/editText5"
+            android:hint="Repita a sua senha" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Senhas não Combinam"
+            android:id="@+id/textView2"
+            android:layout_below="@+id/editText6"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20px"
+            android:textColor="#F44336"
+            android:paddingBottom="10dp"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Criar"
+            android:id="@+id/criar"
+            android:background="@drawable/login_btn"
+            android:layout_alignParentBottom="true"
+            android:layout_alignEnd="@+id/editText4"
+            android:layout_alignParentStart="true"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+</RelativeLayout>
