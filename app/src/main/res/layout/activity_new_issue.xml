@@ -18,6 +18,19 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your coordinates"
+            android:id="@+id/coord" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_weight="2"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:id="@+id/issuemap" />
+
         <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
