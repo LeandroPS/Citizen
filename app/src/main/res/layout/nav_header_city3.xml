@@ -12,7 +12,7 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
-        android:id="@+id/nav_photo"
+        android:id="@+id/single_isuue_photo"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"

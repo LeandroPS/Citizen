@@ -2,13 +2,16 @@ package pooa20161.iff.edu.br.citizen;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -52,6 +55,19 @@ public class Issue extends AppCompatActivity {
         TextView issue_titulo = (TextView) findViewById(R.id.issue_titulo);
         TextView issue_descricao = (TextView) findViewById(R.id.issue_descricao);
 
+        ImageView issue_photo = (ImageView) findViewById(R.id.single_isuue_photo);
+        if(!causa.getPhoto().equals("00")) {
+            issue_photo.setImageBitmap(BitmapFactory.decodeFile(causa.getPhoto()));
+        }else{
+
+        }
+
+        ImageView userfoto_view = (ImageView) findViewById(R.id.userfoto);
+
+        if(!usuario.getFoto().equals("00")) {
+            userfoto_view.setImageBitmap(BitmapFactory.decodeFile(usuario.getFoto()));
+        }
+
         issue_titulo.setText(causa.getTitulo());
         issue_descricao.setText(causa.getDescricao());
 
@@ -59,7 +75,7 @@ public class Issue extends AppCompatActivity {
         final TextView vcApoia = (TextView) findViewById(R.id.voce_apoia);
         if(!meuApoio.isEmpty()){
             vcApoia.setText("Você já apoia!");
-            apoiolinear.setBackgroundColor(Color.GREEN);
+            apoiolinear.setBackgroundColor(Color.parseColor("#689F38"));
         }
 
 
@@ -75,7 +91,7 @@ public class Issue extends AppCompatActivity {
                     Apoio apoio = new Apoio(usuario.getId().intValue(), causa.getId().intValue());
                     apoio.save();
                     vcApoia.setText("Você já apoia!");
-                    apoiolinear.setBackgroundColor(Color.GREEN);
+                    apoiolinear.setBackgroundColor(Color.parseColor("#689F38"));
                     apoios_number.setText(""+(apoios.size()+1));
                 }
             }

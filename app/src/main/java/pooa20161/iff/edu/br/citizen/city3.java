@@ -81,9 +81,7 @@ public class city3 extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_perfil) {
-            // Handle the camera action
-        } else if (id == R.id.nav_cidade) {
+        if (id == R.id.nav_cidade) {
             startActivity(new Intent(city3.this,city2.class));
         } else if (id == R.id.nav_meus) {
             startActivity(new Intent(city3.this,new_issue.class));

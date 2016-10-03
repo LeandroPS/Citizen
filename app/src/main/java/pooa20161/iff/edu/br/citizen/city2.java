@@ -1,26 +1,20 @@
 package pooa20161.iff.edu.br.citizen;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -31,7 +25,6 @@ import java.util.List;
 
 import pooa20161.iff.edu.br.citizen.Adapter.CausaAdapter;
 import pooa20161.iff.edu.br.citizen.Models.Causa;
-import pooa20161.iff.edu.br.citizen.Models.Cidade;
 import pooa20161.iff.edu.br.citizen.Models.Usuario;
 
 public class city2 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -106,7 +99,7 @@ public class city2 extends AppCompatActivity implements NavigationView.OnNavigat
         View header = navigationView.getHeaderView(0);
         TextView nav_username = (TextView) header.findViewById(R.id.nav_username);
 
-        navigationView.getMenu().getItem(1).setChecked(true);
+        navigationView.getMenu().getItem(0).setChecked(true);
 
         nav_username.setText(usuario.getNome());
 
@@ -114,7 +107,7 @@ public class city2 extends AppCompatActivity implements NavigationView.OnNavigat
 
         city2_cidade.setText(usuario.getCidade().getNome());
 
-        ImageView photo = (ImageView) header.findViewById(R.id.nav_photo);
+        ImageView photo = (ImageView) header.findViewById(R.id.single_isuue_photo);
         photo.setClipToOutline(true);
         photo.setPadding(0,0,0,0);
         photo.setImageBitmap(BitmapFactory.decodeFile(usuario.getFoto()));
@@ -160,9 +153,7 @@ public class city2 extends AppCompatActivity implements NavigationView.OnNavigat
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_perfil) {
-            // Handle the camera action
-        } else if (id == R.id.nav_cidade) {
+        if (id == R.id.nav_cidade) {
             startActivity(new Intent(city2.this,city2.class));
         } else if (id == R.id.nav_meus) {
             startActivity(new Intent(city2.this,Minhas_causas.class));

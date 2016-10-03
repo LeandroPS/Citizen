@@ -39,11 +39,15 @@ public class ComentarioAdapter extends ArrayAdapter<Comentario> {
         TextView titulo = (TextView) rowView.findViewById(R.id.causa_titulo);
         TextView subtitulo = (TextView) rowView.findViewById(R.id.causa_subtitulo);
         ImageView icon = (ImageView) rowView.findViewById(R.id.causa_icon);
-
-        String username = (Usuario.findById(Usuario.class, Long.parseLong(""+comentarios.get(position).getIdAutor()))).getNome();
+        Usuario usuario = Usuario.findById(Usuario.class, Long.parseLong(""+comentarios.get(position).getIdAutor()));
+        //String username = (Usuario.findById(Usuario.class, Long.parseLong(""+comentarios.get(position).getIdAutor()))).getNome();
+        String username = usuario.getNome();
 
         titulo.setText(username);
         subtitulo.setText(comentarios.get(position).getTexto());
+        if(!usuario.getFoto().equals("00")) {
+            icon.setImageBitmap(BitmapFactory.decodeFile(usuario.getFoto()));
+        }
         //icon.setImageBitmap(BitmapFactory.decodeFile(comentarios.get(position).getPhoto()));
 
         return rowView;
