@@ -7,18 +7,25 @@ import com.orm.SugarRecord;
  */
 public class Cidade extends SugarRecord {
 
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    String nome;
     String estado;
-    String pais;
 
     public Cidade(){
 
 
     }
 
-    public Cidade(String estado, String pais){
+    public Cidade(String nome, String estado){
+        this.nome = nome;
         this.estado = estado;
-        this.pais = pais;
-
     }
 
 

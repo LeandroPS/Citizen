@@ -6,6 +6,14 @@ import com.orm.SugarRecord;
  * Created by leandropiresdesouza on 9/19/16.
  */
 public class Apoio extends SugarRecord {
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public int getIdCausa() {
+        return idCausa;
+    }
+
     int idUsuario;
     int idCausa;
 

@@ -7,17 +7,16 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-
     <application
+        android:name="com.orm.SugarApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar"
-
-        android:name="com.orm.SugarApp" >  <!--Use this attribute verbatim-->
+        android:theme="@style/AppTheme.NoActionBar"> <!-- Use this attribute verbatim -->
 
         <meta-data
             android:name="DATABASE"
@@ -31,13 +30,16 @@
         <meta-data
             android:name="DOMAIN_PACKAGE_NAME"
             android:value="pooa20161.iff.edu.br.citizen" />
-
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyBWoPVR1p9lZTukkNqXw3dMBfTVEZgqJ1I"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBWoPVR1p9lZTukkNqXw3dMBfTVEZgqJ1I" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <activity
             android:name=".MainActivity"
             android:theme="@style/noTitle">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,7 +56,13 @@
         <activity
             android:name=".city2"
             android:label="@string/title_activity_city2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".city3"
+            android:label="@string/title_activity_city3"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".new_cidade" />
+        <activity android:name=".Minhas_causas"></activity>
     </application>
 
 </manifest>

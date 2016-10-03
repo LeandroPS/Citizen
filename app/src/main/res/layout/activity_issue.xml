@@ -12,7 +12,7 @@
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="300px"
-        android:id="@+id/imageView"
+        android:id="@+id/nav_photo"
         android:layout_alignParentStart="true"
         android:background="#ff0000"
         android:layout_alignParentEnd="true" />
@@ -22,22 +22,21 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Titulo"
-        android:id="@+id/textView3"
+        android:id="@+id/issue_titulo"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:layout_below="@+id/linearLayout2"
-        android:layout_alignStart="@+id/textView4"
+        android:layout_below="@+id/issue_apoio"
+        android:layout_alignStart="@+id/issue_descricao"
         android:layout_marginTop="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        android:id="@+id/textView4"
-        android:layout_below="@+id/textView3"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        android:id="@+id/issue_descricao"
+        android:layout_below="@+id/issue_titulo"
         android:layout_alignParentStart="true"
         android:layout_marginTop="20px"
-        android:layout_marginBottom="20px"
         android:paddingLeft="16dp"
         android:paddingRight="16dp" />
 
@@ -45,8 +44,8 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:id="@+id/linearLayout2"
-        android:layout_below="@+id/imageView"
+        android:id="@+id/issue_apoio"
+        android:layout_below="@+id/nav_photo"
         android:layout_alignParentStart="true"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
@@ -63,7 +62,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="Apoiar"
-            android:id="@+id/textView6"
+            android:id="@+id/voce_apoia"
             android:layout_above="@+id/linearLayout"
             android:layout_alignParentStart="true"
             android:gravity="center_vertical"
@@ -75,11 +74,59 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="100"
-            android:id="@+id/textView5"
+            android:id="@+id/apoios_number"
             android:layout_weight="1"
             android:textAlignment="viewEnd"
             android:gravity="center_vertical"
             android:textColor="#ffffff" />
     </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_below="@+id/issue_descricao"
+        android:layout_alignParentStart="true"
+        android:padding="16dp"
+        android:weightSum="1"
+        android:id="@+id/linearLayout2">
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/imageView"
+            android:src="@drawable/user" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/issue_titulo"
+            android:layout_centerHorizontal="true">
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/comentario_text"
+                android:layout_weight="0.24"
+                android:hint="Digite o seu comentário" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="comentar"
+                android:id="@+id/btn_comentar" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/comentario_list"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

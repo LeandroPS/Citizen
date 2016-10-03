@@ -10,6 +10,23 @@ import java.util.Date;
 public class Comentario extends SugarRecord {
     int idAutor;
     int idCausa;
+
+    public int getIdAutor() {
+        return idAutor;
+    }
+
+    public int getIdCausa() {
+        return idCausa;
+    }
+
+    public String getTexto() {
+        return texto;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
     String texto;
     Date data;
 

@@ -1,20 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!---<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="pooa20161.iff.edu.br.citizen.city2">
+    tools:context="pooa20161.iff.edu.br.citizen.city2">-->
+
+   <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="start">
 
     <include layout="@layout/content_city2" />
-
-    <android.support.design.widget.FloatingActionButton
+<!--
+    <include
+        layout="@layout/app_bar_city3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+-->
+    <!--<android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_menu_add" />
+        android:text="C"
+        style="@style/Widget.Design.FloatingActionButton" />-->
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
-</android.support.design.widget.CoordinatorLayout>
+        <FrameLayout
+            android:id="@+id/container_body"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@id/container_body"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="6dp"
+            app:fabSize="normal"
+
+            app:backgroundTint="@color/colorPrimaryDark"
+            app:rippleColor="#F06292"/>
+
+    </FrameLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_city3"
+        app:menu="@menu/activity_city3_drawer" />
+
+
+    </android.support.v4.widget.DrawerLayout>
+<!---</android.support.design.widget.CoordinatorLayout>-->
